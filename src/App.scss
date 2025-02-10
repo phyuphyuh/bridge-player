@@ -4,14 +4,19 @@
   margin: 0 auto;
 }
 
+.app {
+  width: 100vw;
+}
+
 .app-container {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: repeat(7, 1fr);
   // align-items: center;
   // justify-content: center;
-  width: 80vw;
+  width: 80%;
   height: 100vh;
+  margin: 0 auto;
 }
 
 .lyrics-container {
@@ -24,8 +29,8 @@
 }
 
 .description {
-  font-family: "Goudy Bookletter 1911", Helvetica, serif;
   font-size: 18px;
+  font-weight: normal;
   color: $charcoal;
   grid-column: 2 / 3;
   grid-row: 1 / 2;

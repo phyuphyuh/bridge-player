@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, use } from "react";
 import YoutubePlayer from "./components/YoutubePlayer";
 import SongList from "./components/SongList";
 import CustomPlayer from "./components/CustomPlayer";
+import { useTheme } from "./contexts/ThemeContext";
 import { songs } from "./data";
 import './App.scss'
 
@@ -11,6 +12,14 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const intervalRef = useRef(null);
+
+  const { theme, changeTheme } = useTheme();
+
+  useEffect(() => {
+    if (currentSong) {
+      changeTheme(currentSong.album);
+    }
+  }, [currentSong, changeTheme]);
 
   const startProgressTracking = () => {
     clearInterval(intervalRef.current);
@@ -71,16 +80,18 @@ function App() {
   useEffect(() => clearInterval(intervalRef.current), []);
 
   return (
-    <div className="app-container">
-      <h1 className="description">hardest hitting Taylor Swift bridges</h1>
-      <SongList songs={songs} setCurrentSong={setCurrentSong} />
-      <div className="lyrics-container">
+    <div className={`app ${theme.className}`}>
+      <div className="app-container">
+        <h1 className="description">hardest hitting Taylor Swift bridges</h1>
+        <SongList songs={songs} setCurrentSong={setCurrentSong} />
+        <div className="lyrics-container">
 
+        </div>
+        {currentSong && (
+          <CustomPlayer currentSong={currentSong} isPlaying={isPlaying} handlePlayPause={handlePlayPause} currentTime={currentTime} />
+        )}
+        <YoutubePlayer currentSong={currentSong} setPlayer={setPlayer} setIsPlaying={setIsPlaying} startProgressTracking={startProgressTracking} setCurrentTime={setCurrentTime} />
       </div>
-      {currentSong && (
-        <CustomPlayer currentSong={currentSong} isPlaying={isPlaying} handlePlayPause={handlePlayPause} currentTime={currentTime} />
-      )}
-      <YoutubePlayer currentSong={currentSong} setPlayer={setPlayer} setIsPlaying={setIsPlaying} startProgressTracking={startProgressTracking} setCurrentTime={setCurrentTime} />
     </div>
   )
 }
