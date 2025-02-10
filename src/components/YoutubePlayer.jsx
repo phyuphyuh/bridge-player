@@ -10,7 +10,7 @@ const YoutubePlayer = ({ currentSong, setPlayer, setIsPlaying, startProgressTrac
       modestbranding: 1,
       rel: 0,
       start: currentSong?.preciseStart ?? currentSong?.start,
-      end: currentSong?.end,
+      end: currentSong?.preciseEnd ?? currentSong?.end,
     },
   };
 

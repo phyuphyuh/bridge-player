@@ -5,14 +5,29 @@
 }
 
 .app-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: repeat(7, 1fr);
+  // align-items: center;
+  // justify-content: center;
   width: 80vw;
+  height: 100vh;
 }
 
 .lyrics-container {
   width: 400px;
   height: 400px;
   background-color: $powderblue;
+  grid-column: 2 / 3;
+  grid-row: 2 / 7;
+  place-self: center;
+}
+
+.description {
+  font-family: "Goudy Bookletter 1911", Helvetica, serif;
+  font-size: 18px;
+  color: $charcoal;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  place-self: center;
 }

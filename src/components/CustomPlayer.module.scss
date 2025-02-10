@@ -4,9 +4,12 @@
   margin-top: 20px;
   text-align: center;
   padding: 20px;
-  width: 300px;
+  width: 280px;
   background-color: $powderwhite;
   border: 1px solid $charcoal;
+  grid-column: 3 / 4;
+  grid-row: 3 / 6;
+  place-self: center;
 }
 
 .progressBar {

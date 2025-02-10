@@ -1,18 +1,11 @@
 export const songs = [
   {
-    id: "EXLgZZE072g",
-    title: "evermore",
-    start: 160, //2:40
-    preciseStart: 160.2,
-    end: 226, //3:46
-    album: "evermore",
-  },
-  {
     id: "-xmKlhyQ0dM",
     title: "The Smallest Man Who Ever Lived",
     start: 146, //2:26
     preciseStart: 146.5,
     end: 220, //3:39
+    preciseEnd: 220.2,
     album: "The Tortured Poets Department",
   },
   {
@@ -24,12 +17,29 @@ export const songs = [
     album: "folklore",
   },
   {
+    id: "M7ySK0keirY",
+    title: "You Are In Love",
+    start: 164, //2:44
+    preciseStart: 164.4,
+    end: 210, //3:28
+    preciseEnd: 209.7,
+    album: "1989",
+  },
+  {
     id: "MLV2SJKWk4M",
     title: "illicit affairs",
     start: 126, //2:06
     preciseStart: 126.5,
     end: 159, //2:38
     album: "folklore",
+  },
+  {
+    id: "EXLgZZE072g",
+    title: "evermore",
+    start: 160, //2:40
+    preciseStart: 160.2,
+    end: 226, //3:46
+    album: "evermore",
   },
   {
     id: "TkAomsYFsJw",
@@ -56,14 +66,6 @@ export const songs = [
     album: "evermore",
   },
   {
-    id: "3pj39qZZYoQ",
-    title: "Babe",
-    start: 133, //2:13
-    preciseStart: 133.2,
-    end: 156, //2:35
-    album: "Red",
-  },
-  {
     id: "X0Jti9F-oQA",
     title: "Dear Reader",
     start: 124, //2:04
@@ -74,9 +76,26 @@ export const songs = [
   {
     id: "N-FYySSy0rM",
     title: "Dear John",
-    start: 251, //4:11
+    start: 252, //4:11
+    preciseStart: 251.9,
     end: 317, //5:17
+    preciseEnd: 317.6,
     album: "Speak Now",
+  },
+  {
+    id: "gp1MR2WAAXY",
+    title: "Out of the Woods",
+    start: 147, //2:27
+    end: 188, //3:08
+    album: "1989",
+  },
+  {
+    id: "3pj39qZZYoQ",
+    title: "Babe",
+    start: 133, //2:13
+    preciseStart: 133.2,
+    end: 156, //2:35
+    album: "Red",
   },
   {
     id: "9nIOx-ezlzA",
@@ -97,8 +116,8 @@ export const songs = [
     id: "iFX6_9h7th0",
     title: "The Great War",
     start: 131, //2:11
-    preciseStart: 131.2,
-    end: 173, //2:53
+    preciseStart: 131.9,
+    end: 172, //2:52
     album: "Midnights",
   },
   {
@@ -107,6 +126,7 @@ export const songs = [
     start: 167, //2:47
     preciseStart: 167.9,
     end: 197, //3:17
+    preciseEnd: 197.3,
     album: "evermore",
   },
   {
@@ -114,6 +134,7 @@ export const songs = [
     title: "marjorie",
     start: 129, //2:09
     end: 168, //2:48
+    preciseEnd: 168.3,
     album: "evermore",
   },
   {
@@ -122,6 +143,7 @@ export const songs = [
     start: 116, //1:56
     preciseStart: 116.2,
     end: 135, //2:15
+    preciseEnd: 135.3,
     album: "The Tortured Poets Department",
   }
 ];

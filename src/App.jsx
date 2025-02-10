@@ -20,7 +20,7 @@ function App() {
         const time = player.getCurrentTime();
         setCurrentTime(time);
 
-        if (currentSong && time >= currentSong.end) {
+        if (currentSong && time >= (currentSong.preciseEnd ?? currentSong.end)) {
           player.pauseVideo();
           // setIsPlaying(false);
           clearInterval(intervalRef.current);
@@ -72,6 +72,7 @@ function App() {
 
   return (
     <div className="app-container">
+      <h1 className="description">hardest hitting Taylor Swift bridges</h1>
       <SongList songs={songs} setCurrentSong={setCurrentSong} />
       <div className="lyrics-container">
 
