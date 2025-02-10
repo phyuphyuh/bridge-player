@@ -1,5 +1,10 @@
 @import '../styles/global.scss';
 
+.theme-default {
+  background-color: $powderwhite;
+  font-family: "Goudy Bookletter 1911", serif;
+}
+
 .theme-folklore {
   background-color: $lightgray;
   font-family: "IM Fell DW Pica", serif;
