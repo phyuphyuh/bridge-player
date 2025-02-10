@@ -35,18 +35,25 @@ export const songs = [
     end: 183, //3:03
   },
   {
-    id: "X0Jti9F-oQA",
-    title: "Dear Reader",
-    start: 124, //2:04
-    preciseStart: 124.3,
-    end: 161, //2:41
-  },
-  {
     id: "KaM1bCuG4xo",
     title: "mirrorball",
     start: 149, //2:29
     preciseStart: 149.5,
     end: 184, //3:04
+  },
+  {
+    id: "3pj39qZZYoQ",
+    title: "Babe",
+    start: 133, //2:13
+    preciseStart: 133.2,
+    end: 156, //2:35
+  },
+  {
+    id: "X0Jti9F-oQA",
+    title: "Dear Reader",
+    start: 124, //2:04
+    preciseStart: 124.3,
+    end: 161, //2:41
   },
   {
     id: "N-FYySSy0rM",

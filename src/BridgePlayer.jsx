@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import YouTube from "react-youtube";
+import SongList from "./SongList";
+import CustomPlayer from "./CustomPlayer";
 import { songs } from "./data";
 import "./BridgePlayer.css";
 
@@ -23,7 +25,6 @@ const BridgePlayer = () => {
 
   const onReady = (event) => {
     setPlayer(event.target);
-    console.log('Player object:', event.target);
 
     if (currentSong?.preciseStart !== undefined) {
       event.target.seekTo(currentSong.preciseStart, true);
@@ -32,19 +33,15 @@ const BridgePlayer = () => {
       startProgressTracking();
       const time = player.getCurrentTime();
       setCurrentTime(time);
-      // setCurrentTime(currentSong.preciseStart ?? currentSong.start);
     }
   };
 
   const startProgressTracking = () => {
-    console.log("Progress tracking started");
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
+    clearInterval(intervalRef.current);
+
     intervalRef.current = setInterval(() => {
-      if (player && player.getCurrentTime) {
+      if (player) {
         const time = player.getCurrentTime();
-        console.log("Current Time:", time);
         setCurrentTime(time);
 
         if (currentSong && time >= currentSong.end) {
@@ -56,11 +53,7 @@ const BridgePlayer = () => {
     }, 100);
   };
 
-  const stopProgressTracking = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
-  };
+  const stopProgressTracking = () => clearInterval(intervalRef.current);
 
   const handlePlayPause = () => {
     if (player) {
@@ -77,7 +70,6 @@ const BridgePlayer = () => {
   };
 
   useEffect(() => {
-    console.log('Player object inside useEffect:', player);
     if (player && currentSong) {
       player.loadVideoById({
         videoId: currentSong.id,
@@ -85,42 +77,22 @@ const BridgePlayer = () => {
       });
       player.playVideo();
       setIsPlaying(true);
-      // setCurrentTime(currentSong.preciseStart ?? currentSong.start);
+      setCurrentTime(currentSong.preciseStart ?? currentSong.start);
       startProgressTracking();
     }
   }, [currentSong]);
 
-  useEffect(() => {
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, []);
+  useEffect(() => clearInterval(intervalRef.current), []);
 
   return (
     <div>
       <h1>Bridge Player</h1>
-      <ul>
-        {songs.map((song) => (
-          <li key={song.id}>
-            <button onClick={() => setCurrentSong(song)}>{song.title}</button>
-          </li>
-        ))}
-      </ul>
-      {currentSong && <YouTube videoId={currentSong.id} opts={opts} onReady={onReady} className="video" />}
-
+      <SongList songs={songs} setCurrentSong={setCurrentSong} />
       {currentSong && (
-        <div className="custom-player">
-          <div className="progress-bar">
-            <div
-              className="progress"
-              style={{ width: `${((currentTime - currentSong.start) / (currentSong.end - currentSong.start)) * 100}%` }}
-            ></div>
-          </div>
-          <button onClick={handlePlayPause}>{isPlaying ? "Pause" : "Play"}</button>
-          <p>Playing: {currentSong.title}</p>
-        </div>
+        <YouTube videoId={currentSong.id} opts={opts} onReady={onReady} className="video" />
+      )}
+      {currentSong && (
+        <CustomPlayer currentSong={currentSong} isPlaying={isPlaying} handlePlayPause={handlePlayPause} currentTime={currentTime} />
       )}
     </div>
   );
