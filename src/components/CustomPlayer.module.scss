@@ -1,18 +1,9 @@
-.video {
-  position: absolute;
-  top: -9000px;
-  left: -9000px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
-.custom-player {
+.customPlayer {
   margin-top: 20px;
   text-align: center;
 }
 
-.progress-bar {
+.progressBar {
   width: 100%;
   height: 10px;
   background-color: #ccc;
@@ -27,7 +18,7 @@
   transition: width 0.1s linear;
 }
 
-button {
+.playPauseButton {
   margin-top: 10px;
   padding: 10px 20px;
   font-size: 16px;

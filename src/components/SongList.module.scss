@@ -1,0 +1,15 @@
+.songList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.songItem {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.songLink {
+  text-decoration: none;
+  cursor: pointer;;
+}

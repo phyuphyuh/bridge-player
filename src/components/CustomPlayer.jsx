@@ -1,15 +1,16 @@
 import React from "react";
+import styles from "./CustomPlayer.module.scss";
 
 const CustomPlayer = ({ currentSong, isPlaying, handlePlayPause, currentTime }) => {
   return (
-    <div className="custom-player">
-      <div className="progress-bar">
+    <div className={styles.customPlayer}>
+      <div className={styles.progressBar}>
         <div
-          className="progress"
+          className={styles.progress}
           style={{ width: `${((currentTime - currentSong.start) / (currentSong.end - currentSong.start)) * 100}%` }}
         ></div>
       </div>
-      <button onClick={handlePlayPause}>{isPlaying ? "Pause" : "Play"}</button>
+      <button onClick={handlePlayPause} className={styles.playPauseButton}>{isPlaying ? "Pause" : "Play"}</button>
       <p>Playing: {currentSong.title}</p>
     </div>
   )
