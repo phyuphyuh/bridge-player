@@ -3,7 +3,7 @@ import YoutubePlayer from "./components/YoutubePlayer";
 import SongList from "./components/SongList";
 import CustomPlayer from "./components/CustomPlayer";
 import { songs } from "./data";
-import './App.css'
+import './App.scss'
 
 function App() {
   const [currentSong, setCurrentSong] = useState(songs[0]);
@@ -22,14 +22,24 @@ function App() {
 
         if (currentSong && time >= currentSong.end) {
           player.pauseVideo();
-          setIsPlaying(false);
+          // setIsPlaying(false);
           clearInterval(intervalRef.current);
+          handleNextSong();
         }
       }
     }, 100);
   };
 
   const stopProgressTracking = () => clearInterval(intervalRef.current);
+
+  const handleNextSong = () => {
+    const currentIndex = songs.findIndex((song) => song.id === currentSong.id);
+    if (currentIndex < songs.length - 1) {
+      setCurrentSong(songs[currentIndex + 1]);
+    } else {
+      setIsPlaying(false);
+    }
+  };
 
   const handlePlayPause = () => {
     if (player) {
@@ -61,8 +71,11 @@ function App() {
   useEffect(() => clearInterval(intervalRef.current), []);
 
   return (
-    <div>
+    <div className="app-container">
       <SongList songs={songs} setCurrentSong={setCurrentSong} />
+      <div className="lyrics-container">
+
+      </div>
       {currentSong && (
         <CustomPlayer currentSong={currentSong} isPlaying={isPlaying} handlePlayPause={handlePlayPause} currentTime={currentTime} />
       )}

@@ -1,12 +1,18 @@
+@import '../styles/global.scss';
+
 .customPlayer {
   margin-top: 20px;
   text-align: center;
+  padding: 20px;
+  width: 300px;
+  background-color: $powderwhite;
+  border: 1px solid $charcoal;
 }
 
 .progressBar {
   width: 100%;
   height: 10px;
-  background-color: #ccc;
+  background-color: $powderwhite;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -14,7 +20,7 @@
 .progress {
   height: 100%;
   width: 0%;
-  background-color: gray;
+  background-color: $powderblue;
   transition: width 0.1s linear;
 }
 
