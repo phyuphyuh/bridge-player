@@ -27,6 +27,18 @@ export const ThemeProvider = ({ children }) => {
       setTheme({
         className: "theme-red",
       });
+    } else if (album === "Speak Now") {
+      setTheme({
+        className: "theme-speaknow",
+      });
+    } else if (album === "The Tortured Poets Department") {
+      setTheme({
+        className: "theme-ttpd",
+      });
+    } else if (album === "Midnights") {
+      setTheme({
+        className: "theme-midnights",
+      });
     } else {
       setTheme(initialTheme);
     }

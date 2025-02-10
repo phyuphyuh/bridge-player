@@ -1,8 +1,9 @@
 @import '../styles/global.scss';
 
 .theme-folklore {
-  background-color: $powderwhite;
+  background-color: $lightgray;
   font-family: "IM Fell DW Pica", serif;
+  font-style: italic;
 }
 
 .theme-evermore {
@@ -12,10 +13,27 @@
 
 .theme-1989 {
   background-color: $powderblue;
-  font-family: "Lacquer", serif;
+  font-family: "Patrick Hand", serif;
 }
 
 .theme-red {
   background-color: $red;
   font-family: "Oswald", serif;
+}
+
+.theme-speaknow {
+  background-color: $purple;
+  font-family: "League Script", serif;
+}
+
+.theme-ttpd {
+  background-color: $ttpdlight;
+  font-family: "Goudy Bookletter 1911", serif;
+}
+
+.theme-midnights {
+  background-color: $powderwhite;
+  font-family: "Inter", serif;
+  font-weight: 700;
+  font-style: normal;
 }
