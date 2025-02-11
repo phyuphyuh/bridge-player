@@ -1,7 +1,8 @@
 @use '../styles/global.scss' as *;
 
 .lyricsContainer {
-  width: 450px;
+  min-width: 450px;
+  max-width: max-content;
   min-height: 450px;
   max-height: max-content;
   padding: 2px 12px;

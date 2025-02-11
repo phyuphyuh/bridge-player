@@ -10,6 +10,15 @@ export const songs = [
     artist: "Taylor Swift",
   },
   {
+    id: "9OQBDdNHmXo",
+    title: "All Too Well",
+    start: 179, //2:59
+    preciseStart: 179,
+    end: 226, //3:46
+    album: "Red",
+    artist: "Taylor Swift",
+  },
+  {
     id: "nn_0zPAfyo8",
     title: "august",
     start: 102, //1:42
@@ -95,29 +104,47 @@ export const songs = [
     artist: "Taylor Swift",
   },
   {
+    id: "ukxEKY_7MOc",
+    title: "tolerate it",
+    start: 150, //2:30
+    preciseStart: 150.4,
+    end: 179, //2:59
+    preciseEnd: 178.725,
+    album: "evermore",
+    artist: "Taylor Swift",
+  },
+  {
+    id: "F5TMU6916U8",
+    title: "Long Live",
+    start: 197, //3:17
+    preciseStart: 197.7,
+    end: 271, //4:31
+    preciseEnd: 271.76,
+    album: "Speak Now",
+    artist: "Taylor Swift",
+    lyrics:
+`Hold on to spinning around
+Confetti falls to the ground
+May these memories break our fall
+Will you take a moment? Promise me this
+That you'll stand by me forever
+But if, God forbid, fate should step in
+And force us into a goodbye
+If you have children some day
+When they point to the pictures
+Please, tell 'em my name
+Tell 'em how the crowds went wild
+Tell 'em how I hope they shine
+Long live the walls we crashed through
+I had the time of my life with you`
+  },
+  {
     id: "gp1MR2WAAXY",
     title: "Out of the Woods",
     start: 147, //2:27
     preciseStart: 146.5,
     end: 188, //3:08
     album: "1989",
-    artist: "Taylor Swift",
-  },
-  {
-    id: "3pj39qZZYoQ",
-    title: "Babe",
-    start: 133, //2:13
-    preciseStart: 133.2,
-    end: 156, //2:35
-    album: "Red",
-    artist: "Taylor Swift",
-  },
-  {
-    id: "9nIOx-ezlzA",
-    title: "ivy",
-    start: 184, //3:04
-    end: 205, //3:25
-    album: "evermore",
     artist: "Taylor Swift",
   },
   {
@@ -149,6 +176,33 @@ export const songs = [
     artist: "Taylor Swift",
   },
   {
+    id: "3pj39qZZYoQ",
+    title: "Babe",
+    start: 133, //2:13
+    preciseStart: 133.2,
+    end: 156, //2:35
+    album: "Red",
+    artist: "Taylor Swift",
+  },
+  {
+    id: "pQq9eP5OFhw",
+    title: "You're Losing Me",
+    start: 200, //3:20
+    preciseStart: 200,
+    end: 257, //4:17
+    preciseEnd: 257,
+    album: "Midnights",
+    artist: "Taylor Swift",
+  },
+  {
+    id: "9nIOx-ezlzA",
+    title: "ivy",
+    start: 184, //3:04
+    end: 205, //3:25
+    album: "evermore",
+    artist: "Taylor Swift",
+  },
+  {
     id: "hP6QpMeSG6s",
     title: "marjorie",
     start: 129, //2:09
@@ -168,13 +222,13 @@ export const songs = [
     artist: "Taylor Swift",
   },
   {
-    id: "F5TMU6916U8",
-    title: "Long Live",
-    start: 197, //3:17
-    preciseStart: 197.7,
-    end: 271, //4:31
-    preciseEnd: 271.76,
-    album: "Speak Now",
+    id: "SBGdvxi2JmU",
+    title: "imgonnagetyouback",
+    start: 148, //2:28
+    preciseStart: 148.5,
+    end: 184, //3:04
+    preciseEnd: 183.5,
+    album: "The Tortured Poets Department",
     artist: "Taylor Swift",
   },
 ];
