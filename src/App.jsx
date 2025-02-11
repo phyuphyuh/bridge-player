@@ -132,7 +132,7 @@ function App() {
         }
         return false;
       });
-      lyricToDisplay = desiredLines.join("\n");
+      lyricToDisplay = desiredLines.map(line => line.replace(/\[\d{2}:\d{2}\.\d{2}\]/, "")).join("\n");
 
       setCurrentLyric(lyricToDisplay);
     }
@@ -145,7 +145,7 @@ function App() {
         <SongList songs={songs} setCurrentSong={setCurrentSong} />
         <div className="lyrics-container">
         {currentLyric && (
-          <p>{currentLyric}</p>
+          <pre>{currentLyric}</pre>
         )}
         </div>
         {currentSong && (
