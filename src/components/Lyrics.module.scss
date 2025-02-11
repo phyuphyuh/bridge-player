@@ -1,0 +1,12 @@
+@use '../styles/global.scss' as *;
+
+.lyricsContainer {
+  width: 450px;
+  min-height: 450px;
+  max-height: max-content;
+  padding: 2px 12px;
+  background-color: $powderwhite;
+  grid-column: 2 / 3;
+  grid-row: 2 / 7;
+  place-self: center;
+}
