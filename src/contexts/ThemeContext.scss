@@ -1,4 +1,4 @@
-@import '../styles/global.scss';
+@use '../styles/global.scss' as *;
 
 .theme-default {
   background-color: $powderwhite;
@@ -9,11 +9,13 @@
   background-color: $lightgray;
   font-family: "IM Fell DW Pica", serif;
   font-style: italic;
+  text-transform: lowercase;
 }
 
 .theme-evermore {
   background-color: $redbrown;
   font-family: "IM Fell DW Pica", serif;
+  text-transform: lowercase;
 }
 
 .theme-1989 {

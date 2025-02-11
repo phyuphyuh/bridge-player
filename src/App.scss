@@ -1,4 +1,4 @@
-@import './styles/global';
+@use './styles/global' as *;
 
 #root {
   margin: 0 auto;
