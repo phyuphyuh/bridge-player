@@ -5,11 +5,63 @@
   text-align: center;
   padding: 20px;
   width: 280px;
-  background-color: $powderwhite;
-  border: 0.5px solid $charcoal;
   grid-column: 3 / 4;
   grid-row: 3 / 6;
   place-self: center;
+
+  &.theme-ttpd {
+    background-color: $powderwhite;
+    border: 0.5px solid $ttpdgray;
+    color: $ttpdgray;
+  }
+
+  &.theme-red {
+    background-color: $khaki;
+    border: 0.5px solid $spacecadet;
+    color: $liver;
+  }
+
+  &.theme-speaknow {
+    background-color: $lavender;
+    border: 0.5px solid $purple;
+    color: $purple;
+  }
+
+  &.theme-folklore {
+    background-color: $wolf;
+    border: 0.5px solid $darkgray;
+    color: $dimgray;
+  }
+
+  &.theme-evermore {
+    background-color: $redbrown;
+    border: 0.5px solid $brownsugar;
+    color: $timberwolf;
+  }
+
+  &.theme-midnights {
+    background-color: $midnightsblue;
+    border: 0.5px solid $wine;
+    color: $wine;
+  }
+
+  &.theme-lover {
+    background-color: $loverblue;
+    border: 0.5px solid $lemon;
+    color: $lemon;
+  }
+
+  &.theme-fearless {
+    background-color: $fearlessearth;
+    border: 0.5px solid $kobicha;
+    color: $kobicha;
+  }
+
+  &.theme-1989 {
+    background-color: $powderwhite;
+    border: 0.5px solid $lightbrown;
+    color: $lightbrown;
+  }
 }
 
 .progressBar {
@@ -28,8 +80,21 @@
 }
 
 .playPauseButton {
-  margin-top: 10px;
-  padding: 10px 20px;
+  margin: 12px;
+  padding: 0px;
   font-size: 16px;
   cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: inherit;
+
+  &:active, &:focus, &:hover {
+    outline: none;
+    border: none;
+  }
+}
+
+.skipButton {
+  @extend .playPauseButton;
 }
