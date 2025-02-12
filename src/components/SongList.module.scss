@@ -26,4 +26,8 @@
   text-decoration: none;
   cursor: pointer;
   color: $charcoal;
+
+  &.active {
+    color: $darkerblue;
+  }
 }

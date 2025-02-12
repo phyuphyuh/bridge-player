@@ -46,7 +46,10 @@ const CustomPlayer = ({ currentSong, isPlaying, handlePlayPause, handleSkipForwa
             <FontAwesomeIcon icon={faForward} />
           </button>
         </div>
-        <button onClick={() => setIsShuffle((prev) => !prev)} className={`${styles.shuffleButton} ${isShuffle ? styles.active : ''}`}>
+        <button
+            onClick={() => setIsShuffle((prev) => !prev)}
+            className={`${styles.shuffleButton} ${isShuffle ? styles.active : ''}`}
+            >
           <FontAwesomeIcon icon={faShuffle} />
         </button>
       </div>
