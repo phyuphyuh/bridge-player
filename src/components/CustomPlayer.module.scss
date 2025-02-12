@@ -81,6 +81,15 @@
   transition: width 0.1s linear;
 }
 
+.time {
+  font-size: 14px;
+  margin-bottom: 24px;
+
+  &.theme-lover, &.theme-midnights, &.theme-fearless, &.theme-red {
+    font-size: 11px;
+  }
+}
+
 .buttonsContainer {
   display: flex;
   justify-content: space-around;
