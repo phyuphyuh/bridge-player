@@ -8,7 +8,7 @@ import { songs } from "./data";
 import './App.scss'
 
 function App() {
-  const [currentSong, setCurrentSong] = useState(null);
+  const [currentSong, setCurrentSong] = useState(songs[0]);
   const [player, setPlayer] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -97,6 +97,10 @@ function App() {
         videoId: currentSong.id,
         startSeconds: currentSong.preciseStart ?? currentSong.start,
       });
+      setIsPlaying(true);
+      setCurrentTime(currentSong.preciseStart ?? currentSong.start);
+      startProgressTracking();
+    } else if (currentSong) {
       setIsPlaying(true);
       setCurrentTime(currentSong.preciseStart ?? currentSong.start);
       startProgressTracking();

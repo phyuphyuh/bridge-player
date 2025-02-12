@@ -24,6 +24,7 @@ const YoutubePlayer = ({ currentSong, setPlayer, setIsPlaying, startProgressTrac
       startProgressTracking();
       const time = player.getCurrentTime();
       setCurrentTime(time);
+      // setCurrentTime(currentSong.preciseStart ?? currentSong.start);
     }
   };
 
