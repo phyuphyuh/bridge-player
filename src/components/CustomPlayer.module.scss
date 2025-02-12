@@ -126,13 +126,12 @@
   @extend .playPauseButton;
   border-left: 1px solid !important;
 
-  &:hover,
   &:focus {
-    opacity: 0.8;
+    opacity: 1;
   }
 
   &.active {
-    opacity: 0.6;
+    opacity: 0.5;
   }
 }
 

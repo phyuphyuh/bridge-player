@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import YouTube from "react-youtube";
 import styles from "./YoutubePlayer.module.scss";
 
-const YoutubePlayer = ({ currentSong, setPlayer, setIsPlaying, startProgressTracking, setCurrentTime }) => {
+const YoutubePlayer = ({ currentSong, playerRef, setIsPlaying, startProgressTracking, setCurrentTime }) => {
   const opts = {
     playerVars: {
       autoplay: 1,
@@ -15,14 +15,16 @@ const YoutubePlayer = ({ currentSong, setPlayer, setIsPlaying, startProgressTrac
   };
 
   const onReady = (event) => {
-    setPlayer(event.target);
+    // setPlayer(event.target);
+    playerRef.current = event.target;
+    console.log("onReady", playerRef.current);
 
     if (currentSong?.preciseStart !== undefined) {
       event.target.seekTo(currentSong.preciseStart, true);
       event.target.playVideo();
       setIsPlaying(true);
       startProgressTracking();
-      const time = player.getCurrentTime();
+      const time = playerRef.current.getCurrentTime();
       setCurrentTime(time);
       // setCurrentTime(currentSong.preciseStart ?? currentSong.start);
     }

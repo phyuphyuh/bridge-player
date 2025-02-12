@@ -21,7 +21,6 @@ const Lyrics = ({ currentSong }) => {
             const response = await axios.get(url);
 
             if (response.data.syncedLyrics) {
-              console.log(response.data.syncedLyrics);
               setLyrics(response.data.syncedLyrics);
             } else {
               const searchUrl = `https://lrclib.net/api/search?artist_name=${artistName}&track_name=${trackName}`;

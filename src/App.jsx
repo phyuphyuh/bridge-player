@@ -9,11 +9,12 @@ import './App.scss'
 
 function App() {
   const [currentSong, setCurrentSong] = useState(songs[0]);
-  const [player, setPlayer] = useState(null);
+  // const [player, setPlayer] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [isShuffle, setIsShuffle] = useState(false);
   const intervalRef = useRef(null);
+  const playerRef = useRef(null);
 
   const { theme, changeTheme } = useTheme();
 
@@ -27,12 +28,12 @@ function App() {
     clearInterval(intervalRef.current);
 
     intervalRef.current = setInterval(() => {
-      if (player) {
-        const time = player.getCurrentTime();
+      if (playerRef.current) {
+        const time = playerRef.current.getCurrentTime();
         setCurrentTime(time);
 
         if (currentSong && time >= (currentSong.preciseEnd ?? currentSong.end)) {
-          player.pauseVideo();
+          playerRef.current.pauseVideo();
           clearInterval(intervalRef.current);
           handleNextSong();
         }
@@ -64,13 +65,13 @@ function App() {
   };
 
   const handlePlayPause = () => {
-    if (player) {
+    if (playerRef.current) {
       if (isPlaying) {
-        player.pauseVideo();
+        playerRef.current.pauseVideo();
         setIsPlaying(false);
         stopProgressTracking();
       } else {
-        player.playVideo();
+        playerRef.current.playVideo();
         setIsPlaying(true);
         startProgressTracking();
       }
@@ -92,15 +93,11 @@ function App() {
   };
 
   useEffect(() => {
-    if (player && currentSong) {
-      player.loadVideoById({
+    if (playerRef.current && currentSong) {
+      playerRef.current.loadVideoById({
         videoId: currentSong.id,
         startSeconds: currentSong.preciseStart ?? currentSong.start,
       });
-      setIsPlaying(true);
-      setCurrentTime(currentSong.preciseStart ?? currentSong.start);
-      startProgressTracking();
-    } else if (currentSong) {
       setIsPlaying(true);
       setCurrentTime(currentSong.preciseStart ?? currentSong.start);
       startProgressTracking();
@@ -118,7 +115,7 @@ function App() {
         {currentSong && (
           <CustomPlayer currentSong={currentSong} isPlaying={isPlaying} handlePlayPause={handlePlayPause} handleSkipForward={handleSkipForward} handleSkipBackward={handleSkipBackward} isShuffle={isShuffle} setIsShuffle={setIsShuffle} currentTime={currentTime} />
         )}
-        <YoutubePlayer currentSong={currentSong} setPlayer={setPlayer} setIsPlaying={setIsPlaying} startProgressTracking={startProgressTracking} setCurrentTime={setCurrentTime} />
+        <YoutubePlayer currentSong={currentSong} setIsPlaying={setIsPlaying} startProgressTracking={startProgressTracking} setCurrentTime={setCurrentTime} playerRef={playerRef} />
       </div>
     </div>
   )
