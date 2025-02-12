@@ -48,7 +48,11 @@ function App() {
     const currentIndex = songs.findIndex((song) => song.id === currentSong.id);
 
     if (isShuffle) {
-      const randomIndex = Math.floor(Math.random() * songs.length);
+      let randomIndex;
+      do {
+        randomIndex = Math.floor(Math.random() * songs.length);
+      } while (randomIndex === currentIndex);
+
       setCurrentSong(songs[randomIndex]);
     } else {
       if (currentIndex < songs.length - 1) {
