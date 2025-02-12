@@ -11,6 +11,8 @@ const themes = {
   "evermore": { className: "theme-evermore" },
   "Red": { className: "theme-red" },
   "Speak Now": { className: "theme-speaknow" },
+  "Lover": { className: "theme-lover" },
+  "Fearless": { className: "theme-fearless" },
   "The Tortured Poets Department": { className: "theme-ttpd" },
   "Midnights": { className: "theme-midnights" },
 };

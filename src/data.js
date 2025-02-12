@@ -74,6 +74,16 @@ export const songs = [
     artist: "Taylor Swift",
   },
   {
+    id: "8KpKc3C9V3w",
+    title: "The Archer",
+    start: 126, //2:06
+    preciseStart: 126.5,
+    end: 156, //236
+    preciseEnd: 156.259,
+    album: "Lover",
+    artist: "Taylor Swift",
+  },
+  {
     id: "wMpqCRF7TKg",
     title: "champagne problems",
     start: 146, //2:26
@@ -157,6 +167,16 @@ I had the time of my life with you`
     artist: "Taylor Swift",
   },
   {
+    id: "KsZ6tROaVOQ",
+    title: "the 1",
+    start: 152, //2:32
+    preciseStart: 151.76,
+    end: 165, //2:45
+    preciseEnd: 165.2,
+    album: "folklore",
+    artist: "Taylor Swift",
+  },
+  {
     id: "iFX6_9h7th0",
     title: "The Great War",
     start: 131, //2:11
@@ -195,11 +215,40 @@ I had the time of my life with you`
     artist: "Taylor Swift",
   },
   {
+    id: "6TAPqXkZW_I",
+    title: "betty",
+    start: 155, //2:35
+    preciseStart: 155.8,
+    end: 177, //2:57
+    preciseEnd: 177,
+    album: "folklore",
+    artist: "Taylor Swift",
+  },
+  {
+    id: "DlexmDDSDZ0",
+    title: "The Way I Loved You",
+    start: 158, //2:38
+    preciseStart: 158,
+    end: 183, //3:03
+    preciseEnd: 183.3,
+    album: "Fearless",
+    artist: "Taylor Swift",
+  },
+  {
     id: "9nIOx-ezlzA",
     title: "ivy",
     start: 184, //3:04
     end: 205, //3:25
     album: "evermore",
+    artist: "Taylor Swift",
+  },
+  {
+    id: "igIfiqqVHtA",
+    title: "Enchanted",
+    start: 238, //3:58
+    preciseStart: 238.3,
+    end: 288, //4:48
+    album: "Speak Now",
     artist: "Taylor Swift",
   },
   {
@@ -222,6 +271,16 @@ I had the time of my life with you`
     artist: "Taylor Swift",
   },
   {
+    id: "c_p_TBaHvos",
+    title: "coney island",
+    start: 165, //2:45
+    preciseStart: 165.3,
+    end: 200, //3:20
+    preciseEnd: 200,
+    album: "evermore",
+    artist: "Taylor Swift",
+  },
+  {
     id: "SBGdvxi2JmU",
     title: "imgonnagetyouback",
     start: 148, //2:28
@@ -231,4 +290,5 @@ I had the time of my life with you`
     album: "The Tortured Poets Department",
     artist: "Taylor Swift",
   },
+
 ];
