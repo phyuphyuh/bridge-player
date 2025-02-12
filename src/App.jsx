@@ -12,6 +12,7 @@ function App() {
   const [player, setPlayer] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
+  const [isShuffle, setIsShuffle] = useState(false);
   const intervalRef = useRef(null);
 
   const { theme, changeTheme } = useTheme();
@@ -42,11 +43,19 @@ function App() {
   const stopProgressTracking = () => clearInterval(intervalRef.current);
 
   const handleNextSong = () => {
+    if (!currentSong) return;
+
     const currentIndex = songs.findIndex((song) => song.id === currentSong.id);
-    if (currentIndex < songs.length - 1) {
-      setCurrentSong(songs[currentIndex + 1]);
+
+    if (isShuffle) {
+      const randomIndex = Math.floor(Math.random() * songs.length);
+      setCurrentSong(songs[randomIndex]);
     } else {
-      setIsPlaying(false);
+      if (currentIndex < songs.length - 1) {
+        setCurrentSong(songs[currentIndex + 1]);
+      } else {
+        setIsPlaying(false);
+      }
     }
   };
 
@@ -99,7 +108,7 @@ function App() {
         <SongList songs={songs} setCurrentSong={setCurrentSong} />
         <Lyrics currentSong={currentSong} />
         {currentSong && (
-          <CustomPlayer currentSong={currentSong} isPlaying={isPlaying} handlePlayPause={handlePlayPause} handleSkipForward={handleSkipForward} handleSkipBackward={handleSkipBackward} currentTime={currentTime} />
+          <CustomPlayer currentSong={currentSong} isPlaying={isPlaying} handlePlayPause={handlePlayPause} handleSkipForward={handleSkipForward} handleSkipBackward={handleSkipBackward} isShuffle={isShuffle} setIsShuffle={setIsShuffle} currentTime={currentTime} />
         )}
         <YoutubePlayer currentSong={currentSong} setPlayer={setPlayer} setIsPlaying={setIsPlaying} startProgressTracking={startProgressTracking} setCurrentTime={setCurrentTime} />
       </div>
