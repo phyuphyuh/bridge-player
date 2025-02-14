@@ -25,7 +25,7 @@ const CustomPlayer = ({ currentSong, isPlaying, handlePlayPause, handleSkipForwa
           style={{ width: `${((currentTime - currentSong.start) / (currentSong.end - currentSong.start)) * 100}%` }}
         ></div>
       </div>
-      <p className={`${styles.time} ${styles[theme.className]}`}>{formatedElapsedTime} / {formatedTotalLength}</p>
+      <p className={styles.time}>{formatedElapsedTime} / {formatedTotalLength}</p>
       <div className={styles.songInfo}>
         <p className={styles.playing}>Playing: <span className={styles.title}>{currentSong.title}</span></p>
         <p className={styles.playing}>Album: <span className={styles.title}>{currentSong.album}</span></p>

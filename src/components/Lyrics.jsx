@@ -3,9 +3,10 @@ import { useTheme } from '../contexts/ThemeContext';
 import axios from 'axios';
 import styles from "./Lyrics.module.scss";
 
-const Lyrics = ({ currentSong }) => {
+const Lyrics = ({ currentSong, currentTime }) => {
   const [lyrics, setLyrics] = useState(null);
   const [currentLyric, setCurrentLyric] = useState("");
+  const [lyricToDisplay, setLyricToDisplay] = useState("");
 
   const { theme } = useTheme();
 
@@ -71,15 +72,37 @@ const Lyrics = ({ currentSong }) => {
         lyricToDisplay = lyrics;
       }
 
-      setCurrentLyric(lyricToDisplay);
+      setLyricToDisplay(lyricToDisplay);
     }
   }, [lyrics, currentSong]);
+
+  useEffect(() => {
+    if (lyrics) {
+      const lines = lyrics.split("\n");
+
+      lines.forEach((line) => {
+        const match = line.match(/\[(\d{2}):(\d{2}\.\d{2})\](.*)/);
+        if (match) {
+          const minutes = parseInt(match[1], 10);
+          const seconds = parseFloat(match[2]);
+          const time = minutes * 60 + seconds;
+
+          if (time <= currentTime && time > (currentTime - 1)) {
+            setCurrentLyric(match[3]);
+          }
+        }
+      });
+    }
+  }, [lyrics, currentTime]);
 
   return (
     <div className={`${styles.lyricsContainer} ${styles[theme.className]}`}>
       <div className={styles.lyrics}>
+        {lyricToDisplay && (
+          <pre>{lyricToDisplay}</pre>
+        )}
         {currentLyric && (
-          <pre>{currentLyric}</pre>
+          <pre style={{ color: 'red' }}>{currentLyric}</pre>
         )}
       </div>
     </div>

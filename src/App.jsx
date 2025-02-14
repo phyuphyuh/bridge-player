@@ -116,7 +116,7 @@ function App() {
       <div className="app-container">
         <h1 className="description">hardest hitting Taylor Swift bridges</h1>
         <SongList songs={songs} currentSong={currentSong} setCurrentSong={setCurrentSong} />
-        <Lyrics currentSong={currentSong} />
+        <Lyrics currentSong={currentSong} currentTime={currentTime} />
         {currentSong && (
           <CustomPlayer currentSong={currentSong} isPlaying={isPlaying} handlePlayPause={handlePlayPause} handleSkipForward={handleSkipForward} handleSkipBackward={handleSkipBackward} isShuffle={isShuffle} handleShuffleToggle={handleShuffleToggle} currentTime={currentTime} />
         )}

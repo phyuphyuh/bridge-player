@@ -11,16 +11,41 @@
   text-align: left;
 
   &.theme-ttpd {
-    background-color: $powderwhite;
-    border: 0.5px solid $ttpdgray;
-    color: $ttpdgray;
-    text-transform: initial;
+    background-color: transparent;
+    border: 0.5px solid $ttpdkhaki;
+    color: $ttpdlight;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -10.5px;
+      left: -0.5px;
+      width: 100%;
+      height: 108.5%;
+      z-index: -1;
+      border: 0.5px solid $ttpdkhaki;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: -0.5px;
+      left: -10px;
+      width: 106%;
+      height: 100%;
+      z-index: -1;
+      border: 0.5px solid $ttpdkhaki;
+    }
   }
 
   &.theme-red {
     background-color: $khaki;
     border: 0.5px solid $spacecadet;
     color: $liver;
+
+    .time {
+      font-size: 11px;
+    }
   }
 
   &.theme-speaknow {
@@ -45,24 +70,43 @@
     background-color: $midnightsblue;
     border: 0.5px solid $wine;
     color: $wine;
+
+    .time {
+      font-size: 11px;
+    }
   }
 
   &.theme-lover {
     background-color: $loverblue;
     border: 0.5px solid $lemon;
     color: $lemon;
+
+    .time {
+      font-size: 11px;
+    }
   }
 
   &.theme-fearless {
     background-color: $fearlessearth;
     border: 0.5px solid $kobicha;
     color: $kobicha;
+
+    .time {
+      font-size: 11px;
+    }
   }
 
   &.theme-1989 {
-    background-color: $powderwhite;
+    background-color: $bone;
     border: 0.5px solid $lightbrown;
     color: $lightbrown;
+    box-shadow: 4px 4px 0px 0px $powderblue;
+
+    .songInfo {
+      .title {
+        color: $marker;
+      }
+    }
   }
 }
 
@@ -85,10 +129,6 @@
 .time {
   font-size: 14px;
   margin-bottom: 24px;
-
-  &.theme-lover, &.theme-midnights, &.theme-fearless, &.theme-red {
-    font-size: 11px;
-  }
 }
 
 .buttonsContainer {

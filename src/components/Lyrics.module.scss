@@ -17,9 +17,8 @@
   }
 
   &.theme-ttpd {
-    border: 2px double $jet;
-    padding: 10px;
-    text-transform: initial;
+    border: 0.5px solid $ttpdlight;
+    padding: 0 10px;
 
     .lyrics {
       background: linear-gradient(to bottom right, $belle, $ttpdlight, $ttpdkhaki);
@@ -30,15 +29,18 @@
       &::before {
         content: "";
         position: absolute;
-        top: 0;
+        top: -10.5px;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: $jet2;
+        background-color: transparent;
         z-index: -1;
+        border: 0.5px solid $ttpdlight;
+        padding: 10px 0;
+        box-shadow: inset 0px 10px 0px 0px $jet2,
+                    inset 0px -10px 0px 0px $jet2;
       }
     }
-
   }
 
   &.theme-midnights {
@@ -46,6 +48,7 @@
     background: linear-gradient(to bottom, $navy, $persian 10%, $bluecharcoal, $orangebrown 60%, $eggplant 99%),;
     color: $platinum;
     font-weight: 600;
+    font-size: 14px;
   }
 
   &.theme-1989 {
@@ -60,5 +63,16 @@
       border-radius: 5px;
     }
 
+  }
+
+  &.theme-red {
+    color: $spacecadet;
+    background-color: $alabaster;
+
+    // .lyrics {
+    //   background-color: $red;
+    //   box-shadow: 0px 0px 0px 5px $amarath;
+    //   border-radius: 5px;
+    // }
   }
 }

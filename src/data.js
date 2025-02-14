@@ -143,20 +143,21 @@ export const songs = [
     album: "Speak Now",
     artist: "Taylor Swift",
     lyrics:
-`Hold on to spinning around
-Confetti falls to the ground
-May these memories break our fall
-Will you take a moment? Promise me this
-That you'll stand by me forever
-But if, God forbid, fate should step in
-And force us into a goodbye
-If you have children some day
-When they point to the pictures
-Please, tell 'em my name
-Tell 'em how the crowds went wild
-Tell 'em how I hope they shine
-Long live the walls we crashed through
-I had the time of my life with you`
+`[03:17.63] Hold on to spinning around
+[03:21.76] Confetti falls to the ground
+[03:26.16] May these memories break our fall
+[03:35.11] Will you take a moment?
+[03:40.09] Promise me this
+[03:43.93] That you'll stand by me forever
+[03:47.72] But if, God forbid, fate should step in
+[03:53.37] And force us into a goodbye
+[03:58.12] If you have children some day
+[04:03.03] When they point to the pictures
+[04:07.44] Please, tell 'em my name
+[04:12.83] Tell 'em how the crowds went wild
+[04:17.69] Tell 'em how I hope they shine
+[04:22.99] Long live the walls we crashed through
+[04:26.40] I had the time of my life, with you`
   },
   {
     id: "gp1MR2WAAXY",

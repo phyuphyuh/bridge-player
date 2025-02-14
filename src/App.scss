@@ -6,6 +6,19 @@
 
 .app {
   width: 100vw;
+
+  &.theme-ttpd {
+    .description {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+  &.theme-red {
+    .description {
+      font-size: 18px;
+      color: $alabaster;
+    }
+  }
 }
 
 .app-container {
