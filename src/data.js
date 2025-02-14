@@ -5,7 +5,7 @@ export const songs = [
     start: 146, //2:26
     preciseStart: 146.5,
     end: 220, //3:39
-    preciseEnd: 220.2,
+    preciseEnd: 220.25,
     album: "The Tortured Poets Department",
     artist: "Taylor Swift",
   },
@@ -101,6 +101,16 @@ export const songs = [
     end: 161, //2:41
     preciseEnd: 160.719,
     album: "Midnights",
+    artist: "Taylor Swift",
+  },
+  {
+    id: "_PsBoqNwYo4",
+    title: "The Prophecy",
+    start: 117, //1:57
+    preciseStart: 117.5,
+    end: 164, //2:44
+    preciseEnd: 164.5,
+    album: "The Tortured Poets Department",
     artist: "Taylor Swift",
   },
   {
@@ -212,6 +222,15 @@ I had the time of my life with you`
     end: 257, //4:17
     preciseEnd: 257,
     album: "Midnights",
+    artist: "Taylor Swift",
+  },
+  {
+    id: "OWbDJFtHl3w",
+    title: "my tears ricochet",
+    start: 148, //2:28
+    preciseStart: 148.7,
+    end: 181, //3:01
+    album: "folklore",
     artist: "Taylor Swift",
   },
   {

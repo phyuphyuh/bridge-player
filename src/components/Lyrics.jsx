@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useTheme } from '../contexts/ThemeContext';
 import axios from 'axios';
 import styles from "./Lyrics.module.scss";
 
 const Lyrics = ({ currentSong }) => {
   const [lyrics, setLyrics] = useState(null);
   const [currentLyric, setCurrentLyric] = useState("");
+
+  const { theme } = useTheme();
 
   useEffect(() => {
     const fetchLyrics = async () => {
@@ -73,10 +76,12 @@ const Lyrics = ({ currentSong }) => {
   }, [lyrics, currentSong]);
 
   return (
-    <div className={styles.lyricsContainer}>
-      {currentLyric && (
-        <pre>{currentLyric}</pre>
-      )}
+    <div className={`${styles.lyricsContainer} ${styles[theme.className]}`}>
+      <div className={styles.lyrics}>
+        {currentLyric && (
+          <pre>{currentLyric}</pre>
+        )}
+      </div>
     </div>
   );
 };

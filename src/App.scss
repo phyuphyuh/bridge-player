@@ -20,12 +20,12 @@
 }
 
 .description {
-  font-size: 18px;
+  font-size: inherit;
   font-weight: inherit;
-  color: $charcoal;
   grid-column: 2 / 3;
   grid-row: 1 / 2;
   place-self: center;
+  color: inherit;
 }
 
 pre {

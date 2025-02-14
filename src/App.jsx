@@ -35,6 +35,7 @@ function App() {
         if (currentSong && time >= (currentSong.preciseEnd ?? currentSong.end)) {
           playerRef.current.pauseVideo();
           clearInterval(intervalRef.current);
+
           handleNextSong();
         }
       }
@@ -62,6 +63,10 @@ function App() {
         setIsPlaying(false);
       }
     }
+  };
+
+  const handleShuffleToggle = () => {
+    setIsShuffle((prev) => !prev);
   };
 
   const handlePlayPause = () => {
@@ -113,7 +118,7 @@ function App() {
         <SongList songs={songs} currentSong={currentSong} setCurrentSong={setCurrentSong} />
         <Lyrics currentSong={currentSong} />
         {currentSong && (
-          <CustomPlayer currentSong={currentSong} isPlaying={isPlaying} handlePlayPause={handlePlayPause} handleSkipForward={handleSkipForward} handleSkipBackward={handleSkipBackward} isShuffle={isShuffle} setIsShuffle={setIsShuffle} currentTime={currentTime} />
+          <CustomPlayer currentSong={currentSong} isPlaying={isPlaying} handlePlayPause={handlePlayPause} handleSkipForward={handleSkipForward} handleSkipBackward={handleSkipBackward} isShuffle={isShuffle} handleShuffleToggle={handleShuffleToggle} currentTime={currentTime} />
         )}
         <YoutubePlayer currentSong={currentSong} setIsPlaying={setIsPlaying} startProgressTracking={startProgressTracking} setCurrentTime={setCurrentTime} playerRef={playerRef} />
       </div>

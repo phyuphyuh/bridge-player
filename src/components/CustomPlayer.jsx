@@ -4,7 +4,7 @@ import styles from "./CustomPlayer.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause, faForward, faBackward, faShuffle } from '@fortawesome/free-solid-svg-icons';
 
-const CustomPlayer = ({ currentSong, isPlaying, handlePlayPause, handleSkipForward, handleSkipBackward, isShuffle, setIsShuffle, currentTime }) => {
+const CustomPlayer = ({ currentSong, isPlaying, handlePlayPause, handleSkipForward, handleSkipBackward, isShuffle, handleShuffleToggle, currentTime }) => {
   const { theme } = useTheme();
 
   const formatTime = (time) => {
@@ -47,7 +47,8 @@ const CustomPlayer = ({ currentSong, isPlaying, handlePlayPause, handleSkipForwa
           </button>
         </div>
         <button
-            onClick={() => setIsShuffle((prev) => !prev)}
+            // onClick={() => setIsShuffle((prev) => !prev)}
+            onClick={handleShuffleToggle}
             className={`${styles.shuffleButton} ${isShuffle ? styles.active : ''}`}
             >
           <FontAwesomeIcon icon={faShuffle} />

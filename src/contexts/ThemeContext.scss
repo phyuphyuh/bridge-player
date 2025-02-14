@@ -19,19 +19,21 @@
 }
 
 .theme-1989 {
-  background-color: $lightblue;
+  background: linear-gradient(170deg, $steelblue, $carolina, $timber, $powderwhite);
   font-family: "Patrick Hand", serif;
+  color: $bone;
+  font-size: 24px;
 }
 
 .theme-red {
-  background-color: $red;
+  background-color: $amarath;
   font-family: "Oswald", serif;
 }
 
 .theme-speaknow {
-  background-color: rgba($lavender, 0.5);
+  background-color: $purple;
   font-family: "League Script", serif;
-  font-size: 20px;
+  font-size: 22px;
   color: $darkpurple;
 }
 
@@ -46,13 +48,40 @@
 }
 
 .theme-ttpd {
-  background-color: $ttpdlight;
   font-family: "Goudy Bookletter 1911", serif;
+  position: relative;
+  color: $jet2;
+  text-transform: uppercase;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $ttpdlight;
+    z-index: -1;
+  }
 }
 
 .theme-midnights {
-  background-color: $platinum;
   font-family: "Inter", serif;
   font-weight: 700;
   font-style: normal;
+  background: linear-gradient(to right, $bluepurple 20%, $midnightspurple, $midnightsblue 40%, $cadetgray, $moonstone 70%);
+  background-clip: text;
+  color: transparent;
+  position: relative;
+
+  &::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $platinum;
+  z-index: -1;
+  }
 }
