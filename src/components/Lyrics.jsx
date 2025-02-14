@@ -95,15 +95,43 @@ const Lyrics = ({ currentSong, currentTime }) => {
     }
   }, [lyrics, currentTime]);
 
+  const highlightedLyrics = () => {
+    if (lyricToDisplay && currentLyric) {
+      const lines = lyricToDisplay.split("\n");
+      return (
+        <pre>
+          {lines.map((line, index) => {
+            if (line === currentLyric) {
+              return (
+                <>
+                  <span key={index} style={{ color: 'red' }}>
+                    {line}
+                  </span>
+                  <br />
+                </>
+              );
+            } else {
+              return (
+                <>
+                  <span key={index}>
+                    {line}
+                  </span>
+                  <br />
+                </>
+              );
+            }
+          })}
+        </pre>
+      );
+    } else {
+      return <pre>{lyricToDisplay}</pre>;
+    }
+  };
+
   return (
     <div className={`${styles.lyricsContainer} ${styles[theme.className]}`}>
       <div className={styles.lyrics}>
-        {lyricToDisplay && (
-          <pre>{lyricToDisplay}</pre>
-        )}
-        {currentLyric && (
-          <pre style={{ color: 'red' }}>{currentLyric}</pre>
-        )}
+        {highlightedLyrics()}
       </div>
     </div>
   );

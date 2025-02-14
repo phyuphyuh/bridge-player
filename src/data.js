@@ -143,7 +143,7 @@ export const songs = [
     album: "Speak Now",
     artist: "Taylor Swift",
     lyrics:
-`[03:17.63] Hold on to spinning around
+`[03:17.71] Hold on to spinning around
 [03:21.76] Confetti falls to the ground
 [03:26.16] May these memories break our fall
 [03:35.11] Will you take a moment?
