@@ -10,6 +10,23 @@
   font-family: "IM Fell DW Pica", serif;
   font-style: italic;
   text-transform: lowercase;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    pointer-events: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cfilter id='pixelation'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.1' numOctaves='2'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 10 -5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23pixelation)'/%3E%3C/svg%3E");
+    opacity: 0.3;
+    z-index: 0;
+    mix-blend-mode: overlay;
+    background-size: 50px 50px;
+  }
 }
 
 .theme-evermore {
@@ -23,11 +40,49 @@
   font-family: "Patrick Hand", serif;
   color: $bone;
   font-size: 24px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    pointer-events: none;
+    // background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.1' numOctaves='2'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 15 -7'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    z-index: 0;
+    mix-blend-mode: soft-light;
+    background-size: 70px 70px;
+  }
 }
 
 .theme-red {
   background-color: $amarath;
   font-family: "Oswald", serif;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    pointer-events: none;
+    // background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cfilter id='glitch'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='2'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 10 -5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23glitch)'/%3E%3C/svg%3E");
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cfilter id='pixelation'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.1' numOctaves='2'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 10 -5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23pixelation)'/%3E%3C/svg%3E");
+
+    opacity: 0.5;
+    z-index: 0;
+    mix-blend-mode: overlay;
+    background-size: 50px 50px;
+  }
+
 }
 
 .theme-speaknow {
@@ -39,8 +94,43 @@
 
 .theme-lover {
   background-color: $pink;
-  font-family: "Dancing Script", serif;
+  background-image:
+  radial-gradient(at 31% 70%, $salmon 0px, transparent 40%),
+  radial-gradient(at 26% 3%, $caroblue 0px, transparent 50%),
+  radial-gradient(at 78% 1%, $darkerpink 0px, transparent 50%),
+  radial-gradient(at 71% 28%, $magenta 0px, transparent 50%),
+  radial-gradient(at 92% 40%, $lapink 0px, transparent 50%),
+  radial-gradient(at 58% 98%, $loveryellow 0px, transparent 50%),
+  radial-gradient(at 47% 31%, $lemon 0px, transparent 50%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150%;
+    height: 150%;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='1200' viewBox='0 0 1200 1200'%3E%3Cfilter id='smoke'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.02 0.05' numOctaves='6' seed='2'/%3E%3CfeGaussianBlur stdDeviation='6'/%3E%3CfeColorMatrix type='matrix' values='0.5 0 0 0 0  0 0.5 0 0 0  0 0 0.5 0 0  0 0 0 0.7 0'/%3E%3CfeBlend in='SourceGraphic' mode='multiply'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='%23FFFFFF' filter='url(%23smoke)'/%3E%3C/svg%3E");
+    background-size: 1200px 1200px;
+    opacity: 0.3;
+    mix-blend-mode: luminosity;
+    animation: moveClouds 30s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  @keyframes moveClouds {
+    0% {
+      transform: translate(0, 0) scale(1);
+      background-position: 0% 0%;
+    }
+    100% {
+      transform: translate(50px, -50px) scale(1.1);
+      background-position: 25% 25%;
+    }
+  }
 }
+
 
 .theme-fearless {
   background-color: $fearlessyellow;
@@ -82,5 +172,22 @@
   height: 100%;
   background-color: $platinum;
   z-index: -1;
+  }
+
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    pointer-events: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cfilter id='vhs'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.1' numOctaves='2'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 15 -7'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23vhs)'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    z-index: 0;
+    mix-blend-mode: overlay;
+    background-size: 100px 100px;
   }
 }

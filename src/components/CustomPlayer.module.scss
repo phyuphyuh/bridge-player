@@ -36,15 +36,24 @@
       z-index: -1;
       border: 0.5px solid $ttpdkhaki;
     }
+
+    .time {
+      color: $belle;
+    }
   }
 
   &.theme-red {
     background-color: $khaki;
     border: 0.5px solid $spacecadet;
     color: $liver;
+    box-shadow: -8px 10px 2px 1px $spacecadet;
 
     .time {
       font-size: 11px;
+      color: $spacecadet;
+    }
+    .title {
+      color: $fadedmagenta;
     }
   }
 
@@ -67,8 +76,8 @@
   }
 
   &.theme-midnights {
-    background-color: $midnightsblue;
-    border: 0.5px solid $wine;
+    background-color: $moonstone;
+    border: 0.5px solid $moonstone;
     color: $wine;
 
     .time {
@@ -102,10 +111,11 @@
     color: $lightbrown;
     box-shadow: 4px 4px 0px 0px $powderblue;
 
-    .songInfo {
-      .title {
-        color: $marker;
-      }
+    .title {
+      color: $marker;
+    }
+    .time {
+      color: $darkerblue;
     }
   }
 }
@@ -156,10 +166,13 @@
   border-radius: 0%;
   color: inherit;
 
-  &:focus,
   &:hover {
     outline: none;
-    opacity: 0.8;
+    opacity: 0.7;
+    border: 1px solid;
+  }
+  &:focus {
+    outline: none;
     border: 1px solid;
   }
 
@@ -181,7 +194,7 @@
   }
 
   &.active {
-    opacity: 0.5;
+    opacity: 0.6;
   }
 }
 

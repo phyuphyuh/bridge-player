@@ -77,7 +77,7 @@ export const songs = [
     id: "8KpKc3C9V3w",
     title: "The Archer",
     start: 126, //2:06
-    preciseStart: 126.5,
+    preciseStart: 126.05,
     end: 156, //236
     preciseEnd: 156.259,
     album: "Lover",

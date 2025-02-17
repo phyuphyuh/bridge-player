@@ -103,21 +103,21 @@ const Lyrics = ({ currentSong, currentTime }) => {
           {lines.map((line, index) => {
             if (line === currentLyric) {
               return (
-                <>
-                  <span key={index} style={{ color: 'red' }}>
+                <React.Fragment key={index}>
+                  <span className={styles.highlightedLyric}>
                     {line}
                   </span>
                   <br />
-                </>
+                </React.Fragment>
               );
             } else {
               return (
-                <>
-                  <span key={index}>
+                <React.Fragment key={index}>
+                  <span>
                     {line}
                   </span>
                   <br />
-                </>
+                </React.Fragment>
               );
             }
           })}

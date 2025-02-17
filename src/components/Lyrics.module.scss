@@ -5,7 +5,7 @@
   grid-column: 2 / 3;
   grid-row: 2 / 7;
   place-self: center;
-  border: 0.5px solid $charcoal;
+  // border: 0.5px solid $charcoal;
   color: inherit;
 
   .lyrics {
@@ -13,7 +13,11 @@
     min-width: 450px;
     max-width: max-content;
     min-height: 450px;
-    max-height: max-content;
+    max-height: fit-content;
+
+    .highlightedLyric {
+      color: $powderwhite
+    }
   }
 
   &.theme-ttpd {
@@ -40,6 +44,10 @@
         box-shadow: inset 0px 10px 0px 0px $jet2,
                     inset 0px -10px 0px 0px $jet2;
       }
+
+      .highlightedLyric {
+        color: white;
+      }
     }
   }
 
@@ -49,6 +57,10 @@
     color: $platinum;
     font-weight: 600;
     font-size: 14px;
+
+    .highlightedLyric {
+      color: $cadetgray;
+    }
   }
 
   &.theme-1989 {
@@ -61,6 +73,10 @@
       background-color: $timber;
       box-shadow: 0px 0px 0px 5px $bone;
       border-radius: 5px;
+
+      .highlightedLyric {
+        color: $darkerblue;
+      }
     }
 
   }
@@ -68,11 +84,43 @@
   &.theme-red {
     color: $spacecadet;
     background-color: $alabaster;
+    box-shadow: -8px 10px 2px 1px $spacecadet;
 
-    // .lyrics {
-    //   background-color: $red;
-    //   box-shadow: 0px 0px 0px 5px $amarath;
-    //   border-radius: 5px;
-    // }
+    .highlightedLyric {
+      color: $fadedmagenta;
+    }
+  }
+
+  &.theme-folklore {
+    color: $wolf;
+    border: 0px;
+
+    .lyrics {
+      background: linear-gradient(to right, rgba(90, 89, 89, 0.9), rgba(174, 173, 173, 0.3));
+      backdrop-filter: blur(2px) invert(20%);
+      border: 5px ridge $battleshipgray;
+    }
+
+    .highlightedLyric {
+      color: $antiflashwhite;
+    }
+  }
+
+  &.theme-evermore {
+
+    .lyrics {
+      padding: -5px 12px;
+      background-color: $mud;
+      color: $garnet;
+      border: 2px double $redbrown;
+      box-shadow: inset 0 0 5px $cinereous;
+
+
+      .highlightedLyric {
+        color: $brownsugar;
+      }
+    }
+
+
   }
 }
