@@ -9,7 +9,7 @@
   color: inherit;
 
   .lyrics {
-    padding: 2px 12px;
+    padding: 0px 12px;
     min-width: 450px;
     max-width: max-content;
     min-height: 450px;
@@ -29,6 +29,7 @@
       background-clip: text;
       color: transparent;
       position: relative;
+      padding: 2px 12px;
 
       &::before {
         content: "";
@@ -73,6 +74,7 @@
       background-color: $timber;
       box-shadow: 0px 0px 0px 5px $bone;
       border-radius: 5px;
+      padding: 2px 12px;
 
       .highlightedLyric {
         color: $darkerblue;
@@ -130,15 +132,15 @@
     // box-shadow: 0px 0px 10px 5px $loveryellow;
     border-radius: 10px;
     z-index: 5;
-    background-color: $lemon;
-    background-image:
-    radial-gradient(at 31% 70%, $salmon 0px, transparent 40%),
-    radial-gradient(at 26% 3%, $caroblue 0px, transparent 50%),
-    radial-gradient(at 78% 1%, $darkerpink 0px, transparent 50%),
-    radial-gradient(at 71% 28%, $magenta 0px, transparent 50%),
-    radial-gradient(at 92% 40%, $lapink 0px, transparent 50%),
-    radial-gradient(at 58% 98%, $loveryellow 0px, transparent 50%),
-    radial-gradient(at 47% 31%, $lemon 0px, transparent 50%);
+    background-color: $pink;
+    // background-image:
+    // radial-gradient(at 31% 70%, $salmon 0px, transparent 40%),
+    // radial-gradient(at 26% 3%, $caroblue 0px, transparent 50%),
+    // radial-gradient(at 78% 1%, $darkerpink 0px, transparent 50%),
+    // radial-gradient(at 71% 28%, $magenta 0px, transparent 50%),
+    // radial-gradient(at 92% 40%, $lapink 0px, transparent 50%),
+    // radial-gradient(at 58% 98%, $loveryellow 0px, transparent 50%),
+    // radial-gradient(at 47% 31%, $lemon 0px, transparent 50%);
 
     .lyrics {
       // box-shadow: 0px 0px 10px 5px $lemon;
@@ -153,10 +155,10 @@
       &::before {
         content: "";
         position: absolute;
-        width: 230px;
-        height: 230px;
-        bottom: 24px;
-        right: -18px;
+        width: 150px;
+        height: 150px;
+        bottom: 20px;
+        right: -12px;
         background: url('../assets/glitter2.jpg') repeat;
         background-size: 70px;
         -webkit-mask-image: url('../assets/heart.png');
@@ -171,12 +173,12 @@
   }
 
   &.theme-speaknow {
-    color: $purple;
-    background-color: $lavender;
-    border: 0.5px solid $purple;
+    color: $gold;
+    background-color: $darkpurple;
+    border: 2px ridge $gold;
 
     .highlightedLyric {
-      color: $purple;
+      color: $antiflashwhite;
     }
   }
 }

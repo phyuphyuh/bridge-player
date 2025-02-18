@@ -60,6 +60,18 @@
     mix-blend-mode: luminosity;
     background-size: 1000px 1000px;
   }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/seagulls.png') no-repeat;
+    pointer-events: none;
+
+  }
 }
 
 .theme-red {
@@ -91,7 +103,7 @@
 @function multiple-box-shadow($n) {
   $value: '';
   @for $i from 1 through $n {
-    $value: '#{$value} #{math.random(2000)}px #{math.random(2000)}px #FFF';
+    $value: '#{$value} #{math.random(2000)}px #{math.random(1500)}px #FFF';
     @if $i != $n {
       $value: '#{$value},';
     }
@@ -103,7 +115,7 @@
   background: radial-gradient(ellipse at bottom, $purple 0%, $darkpurple 100%);
   font-family: "League Script", serif;
   font-size: 22px;
-  color: $darkpurple;
+  color: $gold;
   overflow: hidden;
   height: 100vh;
   width: 100%;

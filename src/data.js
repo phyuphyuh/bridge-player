@@ -119,9 +119,21 @@ export const songs = [
     start: 252, //4:11
     preciseStart: 251.9,
     end: 317, //5:17
-    preciseEnd: 317.6,
+    preciseEnd: 318.74,
     album: "Speak Now",
     artist: "Taylor Swift",
+    lyrics:
+`[04:12.13] You are an expert at sorry
+[04:16.22] And keeping lines blurry
+[04:19.34] Never impressed by me acing your tests
+[04:24.60] All the girls that you've run dry
+[04:28.28] Have tired, lifeless eyes 'cause you burned them out
+[04:37.27] But I took your matches before fire could catch me
+[04:43.02] So don't look now
+[04:49.33] I'm shining like fireworks
+[04:52.62] Over your sad empty town
+[04:58.66]
+[05:05.81] Oh-oh, oh, oh, oh, oh`
   },
   {
     id: "ukxEKY_7MOc",
