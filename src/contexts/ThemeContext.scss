@@ -1,4 +1,6 @@
 @use '../styles/global.scss' as *;
+@use 'sass:math';
+@use 'sass:string';
 
 .theme-default {
   background-color: $powderwhite;
@@ -51,12 +53,12 @@
     height: 100%;
     background: inherit;
     pointer-events: none;
-    // background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.1' numOctaves='2'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 15 -7'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+    // background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.1' numOctaves='2'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 15 -7'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
     opacity: 0.5;
     z-index: 0;
-    mix-blend-mode: soft-light;
-    background-size: 70px 70px;
+    mix-blend-mode: luminosity;
+    background-size: 1000px 1000px;
   }
 }
 
@@ -85,52 +87,120 @@
 
 }
 
+
+@function multiple-box-shadow($n) {
+  $value: '';
+  @for $i from 1 through $n {
+    $value: '#{$value} #{math.random(2000)}px #{math.random(2000)}px #FFF';
+    @if $i != $n {
+      $value: '#{$value},';
+    }
+  }
+  @return string.unquote($value);
+}
+
 .theme-speaknow {
-  background-color: $purple;
+  background: radial-gradient(ellipse at bottom, $purple 0%, $darkpurple 100%);
   font-family: "League Script", serif;
   font-size: 22px;
   color: $darkpurple;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: multiple-box-shadow(700);
+    animation: animStar 50s linear infinite;
+  }
+
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 0px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: multiple-box-shadow(200);
+    animation: animStar 150s linear infinite;
+  }
+
+  @keyframes animStar {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100vh);
+    }
+  }
 }
 
 .theme-lover {
+  font-family: "Parisienne", serif;
+  font-size: 20px;
+  color: $magenta;
   background-color: $pink;
   background-image:
   radial-gradient(at 31% 70%, $salmon 0px, transparent 40%),
   radial-gradient(at 26% 3%, $caroblue 0px, transparent 50%),
+  radial-gradient(at 5% 1%, $mimipink 0px, transparent 70%),
   radial-gradient(at 78% 1%, $darkerpink 0px, transparent 50%),
   radial-gradient(at 71% 28%, $magenta 0px, transparent 50%),
   radial-gradient(at 92% 40%, $lapink 0px, transparent 50%),
   radial-gradient(at 58% 98%, $loveryellow 0px, transparent 50%),
   radial-gradient(at 47% 31%, $lemon 0px, transparent 50%);
+  position: relative;
+  overflow: hidden;
 
   &::before {
     content: "";
     position: absolute;
-    top: -50px;
-    left: -50px;
-    width: 150%;
-    height: 150%;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='1200' viewBox='0 0 1200 1200'%3E%3Cfilter id='smoke'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.02 0.05' numOctaves='6' seed='2'/%3E%3CfeGaussianBlur stdDeviation='6'/%3E%3CfeColorMatrix type='matrix' values='0.5 0 0 0 0  0 0.5 0 0 0  0 0 0.5 0 0  0 0 0 0.7 0'/%3E%3CfeBlend in='SourceGraphic' mode='multiply'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='%23FFFFFF' filter='url(%23smoke)'/%3E%3C/svg%3E");
-    background-size: 1200px 1200px;
-    opacity: 0.3;
-    mix-blend-mode: luminosity;
-    animation: moveClouds 30s infinite cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 0;
+    width: 200%;
+    height: 200%;
+    top: 50px;
+    left: 50px;
+    background: url('../assets/pinkclouds2.png') repeat;
+    opacity: 0.5;
     pointer-events: none;
+    animation: moveClouds 20s linear alternate infinite;
   }
 
   @keyframes moveClouds {
-    0% {
-      transform: translate(0, 0) scale(1);
-      background-position: 0% 0%;
+    from {
+      transform: translate(0, 0);
     }
-    100% {
-      transform: translate(50px, -50px) scale(1.1);
-      background-position: 25% 25%;
+    to {
+      transform: translate(-100px, 100px);
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -10px;
+    left: -50px;
+    background: url('../assets/pinkclouds.png') repeat;
+    opacity: 0.4;
+    pointer-events: none;
+    animation: moveClouds2 20s cubic-bezier(0.165, 0.84, 0.44, 1) alternate infinite;
+  }
+
+  @keyframes moveClouds2 {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(250px, -100px);
     }
   }
 }
-
 
 .theme-fearless {
   background-color: $fearlessyellow;
@@ -172,22 +242,5 @@
   height: 100%;
   background-color: $platinum;
   z-index: -1;
-  }
-
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: inherit;
-    pointer-events: none;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cfilter id='vhs'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.1' numOctaves='2'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 15 -7'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23vhs)'/%3E%3C/svg%3E");
-    opacity: 0.5;
-    z-index: 0;
-    mix-blend-mode: overlay;
-    background-size: 100px 100px;
   }
 }
